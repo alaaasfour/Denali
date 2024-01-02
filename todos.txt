@@ -3,5 +3,8 @@ clean
 help
 homework
 hiking
-store
-travel
+Travel to Colorado
+do the laundry
+buy bread
+Take the trash
+Clean The Car
