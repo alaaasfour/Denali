@@ -8,8 +8,8 @@ These instructions will help you set up and run the todo list manager on your lo
 Make sure you have Python installed on your machine.
 
 ## Features:
-  add: Add a new todo.
-  edit: Edit an existing todo.
-  show: Display the current list of todos.
-  complete: Mark a todo as complete.
-  exit: Exit the program.
+  <br>add: Add a new todo.
+  <br>edit: Edit an existing todo.
+  <br>show: Display the current list of todos.
+  <br>complete: Mark a todo as complete.
+  <br>exit: Exit the program.
