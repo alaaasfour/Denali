@@ -1,7 +1,11 @@
-def get_todos():
-    with open('todos.txt', 'r') as file_local:
+def get_todos(filepath="todos.txt"):
+    with open(filepath, 'r') as file_local:
         todos_local = file_local.readlines()
     return todos_local
+
+def write_todos(todos_arg, filepath="todos.txt"):
+    with open('todos.txt', 'w') as file:
+        file.writelines(todos)
 
 while True:
     user_action = input("Type add, edit, show, complete or exit ")
@@ -10,10 +14,8 @@ while True:
     if user_action.startswith('add'):
         todo = user_action[4:].strip().title() + "\n"
         todos = get_todos()
-
         todos.append(todo)
-        with open('todos.txt', 'w') as file:
-            file.writelines(todos)
+        write_todos(todos)
         message = f"Todo '{todo.strip('\n')}' was added to the list!"
         print(message)
 
@@ -32,14 +34,10 @@ while True:
         try:
             number = int(user_action[5:])
             number = number - 1
-
             todos = get_todos()
-
             new_todo = input("Enter a new todo item: ").title()
             todos[number] = new_todo + '\n'
-
-            with open('todos.txt', 'w') as file:
-                file.writelines(todos)
+            write_todos(todos)
             message = f"Todo was updated to: '{new_todo}'"
             print(message)
         except ValueError:
@@ -53,13 +51,14 @@ while True:
             index = number - 1
             todo_to_remove = todos[index].strip('\n')
             todos.pop(index)
-
-            with open('todos.txt', 'w') as file:
-                file.writelines(todos)
+            write_todos(todos, 'todos.txt')
             message = f"Todo '{todo_to_remove}' was removed from the list!"
             print(message)
         except IndexError:
             print("There is no item with that number!")
+            continue
+        except ValueError:
+            print("Please, enter the number of the todo you want to complete!")
             continue
 
     elif user_action.startswith('exit'):

@@ -1,10 +1,8 @@
-clean
 help
 homework
 hiking
 Travel to Colorado
 do the laundry
-buy bread
 Take the trash
 Pick Up Ava From School
 change the black sheets
@@ -18,5 +16,7 @@ Attend The Course
 Say Hello To Neighbor
 Book A Flight To London
 Cook Dinner
-Clean The Cloths
 Do The Dishes
+Clean The Code From Bugs
+Eat Fish
+Go To The Gym
