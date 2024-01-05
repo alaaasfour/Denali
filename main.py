@@ -14,12 +14,16 @@ while True:
     user_action = user_action.strip()
 
     if user_action.startswith('add'):
-        todo = user_action[4:].strip().title() + "\n"
-        todos = get_todos()
-        todos.append(todo)
-        write_todos(todos)
-        message = f"Todo '{todo.strip('\n')}' was added to the list!"
-        print(message)
+        if len(user_action) < 5:
+            print("Please enter a todo item")
+            continue
+        else:
+            todo = user_action[4:].strip().title() + "\n"
+            todos = get_todos()
+            todos.append(todo)
+            write_todos(todos)
+            message = f"Todo '{todo.strip('\n')}' was added to the list!"
+            print(message)
 
     elif user_action.startswith('show'):
         todos = get_todos()
