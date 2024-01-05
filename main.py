@@ -1,14 +1,5 @@
-def get_todos(filepath="todos.txt"):
-    """ Read a text file and return the list of to-do items. """
-    with open(filepath, 'r') as file_local:
-        todos_local = file_local.readlines()
-    return todos_local
-
-def write_todos(todos_arg, filepath="todos.txt"):
-    """ Write a text file and return the list of to-do. """
-    with open('todos.txt', 'w') as file:
-        file.writelines(todos)
-
+# from functions import write_todos, get_todos
+import functions
 while True:
     user_action = input("Type add, edit, show, complete or exit ")
     user_action = user_action.strip()
@@ -19,14 +10,14 @@ while True:
             continue
         else:
             todo = user_action[4:].strip().title() + "\n"
-            todos = get_todos()
+            todos = functions.get_todos()
             todos.append(todo)
-            write_todos(todos)
+            functions.write_todos(todos)
             message = f"Todo '{todo.strip('\n')}' was added to the list!"
             print(message)
 
     elif user_action.startswith('show'):
-        todos = get_todos()
+        todos = functions.get_todos()
 
         # List comprehension method to remove the new line between the tasks
         # new_todos = [item.strip('\n') for item in todos]
@@ -39,25 +30,31 @@ while True:
     elif user_action.startswith('edit'):
         try:
             number = int(user_action[5:])
-            number = number - 1
-            todos = get_todos()
-            new_todo = input("Enter a new todo item: ").title()
-            todos[number] = new_todo + '\n'
-            write_todos(todos)
-            message = f"Todo was updated to: '{new_todo}'"
-            print(message)
+            todos = functions.get_todos()
+            if 1<= number <= len(todos):
+                number = number - 1
+                new_todo = input("Enter a new todo item: ").title()
+                todos[number] = new_todo + '\n'
+                functions.write_todos(todos)
+                message = f"Todo was updated to: '{new_todo}'"
+                print(message)
+            else:
+                print("There is no item with that number!")
         except ValueError:
-            print("Command is not valid!")
+            print("Please, enter the number of the todo you want to edit!")
+            continue
+        except IndexError:
+            print("There is no item with that number!")
             continue
 
     elif user_action.startswith('complete'):
         try:
             number = int(user_action[9:])
-            todos = get_todos()
+            todos = functions.get_todos()
             index = number - 1
             todo_to_remove = todos[index].strip('\n')
             todos.pop(index)
-            write_todos(todos, 'todos.txt')
+            functions.write_todos(todos, 'todos.txt')
             message = f"Todo '{todo_to_remove}' was removed from the list!"
             print(message)
         except IndexError:
