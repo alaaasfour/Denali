@@ -1,5 +1,8 @@
-# from functions import write_todos, get_todos
 import functions
+import time
+
+now = time.strftime("%b %d, %Y %H:%M:%S")
+print("It is:", now)
 while True:
     user_action = input("Type add, edit, show, complete or exit ")
     user_action = user_action.strip()
@@ -31,7 +34,7 @@ while True:
         try:
             number = int(user_action[5:])
             todos = functions.get_todos()
-            if 1<= number <= len(todos):
+            if 1 <= number <= len(todos):
                 number = number - 1
                 new_todo = input("Enter a new todo item: ").title()
                 todos[number] = new_todo + '\n'
@@ -66,6 +69,7 @@ while True:
 
     elif user_action.startswith('exit'):
         break
+
     else:
         print("Unknown Command, please enter a valid command 'add', 'show', 'edit', 'complete' or 'exit'")
 

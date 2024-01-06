@@ -1,4 +1,3 @@
-help
 homework
 hiking
 Travel to Colorado
@@ -20,3 +19,4 @@ Do The Dishes
 Clean The Code From Bugs
 Eat Fish
 Go To School With Maya
+Put The Dirty Dishes In The Dishwasher
