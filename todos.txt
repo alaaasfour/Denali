@@ -1,5 +1,5 @@
-homework
-hiking
+Do Your Homework
+Go Hiking
 Travel to Colorado
 do the laundry
 Take the trash
@@ -20,5 +20,6 @@ Clean The Code From Bugs
 Eat Fish
 Go To School With Maya
 Put The Dirty Dishes In The Dishwasher
-Buy gas
+Buy Gas From Shell Station
 Apply For Jobs
+Grap Coffee From Store
