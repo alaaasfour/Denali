@@ -1,5 +1,5 @@
 # Todo List Manager 📃
-### A simple command-line todo list manager in Python. This script allows users to add, edit, show, complete todos, and exit the program.
+### A simple command-line and GUI todo list manager in Python. This script allows users to add, edit, show, complete todos, and exit the program.
 
 ## Getting Started 🚀
 These instructions will help you set up and run the todo list manager on your local machine.
