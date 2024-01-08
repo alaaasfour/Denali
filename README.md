@@ -36,5 +36,7 @@ Make sure you have Python 3.10+ installed on your machine. In addition to Stream
 
 ## Screenshots 🖼️
 ![Screenshot 2024-01-08 at 3 34 18 PM](https://github.com/alaaasfour/Denali/assets/43347504/e4cdb414-d5a7-4f1a-a28e-5721c6195a4b)
+
 <img width="751" alt="Screenshot 2024-01-08 at 3 33 35 PM" src="https://github.com/alaaasfour/Denali/assets/43347504/ab1fc135-cce5-463e-b3cb-2afbf25d0650">
+
 <img width="611" alt="Screenshot 2024-01-08 at 3 31 46 PM" src="https://github.com/alaaasfour/Denali/assets/43347504/db232b2f-b707-4495-9f93-90defdbb67f8">
