@@ -9,7 +9,7 @@ def add_todo():
 
 st.title("My Todo App")
 st.subheader("This is my todo app")
-st.write("This app is to increase your productivity")
+st.write("This app is to increase your <b>productivity</b>", unsafe_allow_html=True)
 
 def save_todo():
     # Get the edited todo and its original index
@@ -21,6 +21,8 @@ def save_todo():
     # Remove the edit state and rerun to refresh the page
     del st.session_state["edit_index"], st.session_state["edit_todo"]
     st.experimental_rerun()
+
+st.text_input(label="", placeholder="Add a new todo...", on_change=add_todo, key="new_todo")
 
 for index, todo in enumerate(todos):
     col1, col2, col3 = st.columns([0.8, 0.3, 0.5])
@@ -48,4 +50,3 @@ if "to_delete" in st.session_state:
 
 if "edit_index" in st.session_state:
     st.text_input("Edit your todo:", value=st.session_state["edit_todo"], on_change=save_todo, key="edit_todo")
-st.text_input(label="", placeholder="Add a new todo...", on_change=add_todo, key="new_todo")
