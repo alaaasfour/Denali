@@ -1,6 +1,11 @@
 import functions
 import PySimpleGUI as sg
 import time
+import os
+
+if not os.path.exists("todos.txt"):
+    with open("todos.txt", "w") as file:
+        pass
 
 clock = sg.Text('', key='clock')
 label = sg.Text("Type in a to-do")
@@ -28,6 +33,10 @@ while True:
         case "Add":
             todos = functions.get_todos()
             new_todo = values['todo'].title() + "\n"
+            if new_todo in todos:
+                user_response = sg.popup_yes_no(f"The todo ['{new_todo}'] already exists. Do you want to add it again?", font=("Helvetica", 20))
+                if user_response == "No":
+                    continue
             todos.append(new_todo)
             functions.write_todos(todos)
             window['todos'].update(values=todos)

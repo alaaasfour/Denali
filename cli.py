@@ -14,6 +14,10 @@ while True:
         else:
             todo = user_action[4:].strip().title() + "\n"
             todos = functions.get_todos()
+            if todo in todos:
+                user_response = input(f"The todo [{todo.strip('\n')}] already exists. Do you want to add it again? (yes/no): ").lower()
+                if user_response != "yes":
+                    continue
             todos.append(todo)
             functions.write_todos(todos)
             message = f"Todo '{todo.strip('\n')}' was added to the list!"
