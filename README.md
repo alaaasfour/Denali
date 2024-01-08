@@ -2,7 +2,10 @@
 
 ## Description 📖
 ### This repository contains a simple to-do list application implemented in three different versions using Python. The application allows users to add, edit, show, complete, or exit tasks in their to-do list.
-The three versions are:
+
+## Getting Started 🚀
+These instructions will help you set up and run the todo list manager on your local machine.
+The three versions for the application as follows:
 
 ### 1. Command-Line Version (cli.py):
 Users interact with the application through the command line.
@@ -17,11 +20,8 @@ Implements a web-based interface using Streamlit.
 Ensure you have Streamlit installed: `pip install streamlit`.
 <br>To run: `streamlit run web.py`
 
-## Getting Started 🚀
-These instructions will help you set up and run the todo list manager on your local machine.
-
 ## Prerequisites 🐍
-Make sure you have Python installed on your machine.
+Make sure you have Python 3.10+ installed on your machine. In addition to Streamlit and PySimpleGUI packages.
 
 ## Features ✨
   <br>add ➕: Add a new todo.
